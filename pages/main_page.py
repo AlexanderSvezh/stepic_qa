@@ -19,3 +19,9 @@ class MainPage(BasePage):
 
     def click_add_product_to_basket(self):
         self.browser.find_element(*BasketPageLocators.BASKET).click()
+
+    def is_success_message(self):
+        return self.is_disappeared(*MainPageLocators.SUCCESS_MESSAGE)
+
+    def check_empty_basket(self):
+        return self.browser.find_element(*BasketPageLocators.BASKET_MINI).text

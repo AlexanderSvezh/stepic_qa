@@ -23,26 +23,9 @@ def test_guest_should_see_login_link(browser):
     page.should_be_login_link()
 
 
-def test_guest_can_add_product_to_basket(browser):
-    link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
-    page = MainPage(browser, link)
-    page.open()
-    page.click_add_product_to_basket()
-    page.solve_quiz_and_get_code()
-
-
 url = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
 
 
-def test_guest_can_add_product_to_basket_207(browser):
-    link = '{}/?promo=newYear2019'.format(url)
-    page = MainPage(browser, link)
-    page.open()
-    page.click_add_product_to_basket()
-    page.solve_quiz_and_get_code()
-
-
-# ToDo : create reason to xfail tests
 @pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = MainPage(browser, url)

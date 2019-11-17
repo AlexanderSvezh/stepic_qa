@@ -14,10 +14,13 @@ https://chromedriver.chromium.org/downloads
 * или же поднять виртуальное окружение:
 
 в директории проекта выполнить:
+
 python3 -m venv venv
+
 source venv/bin/activate
 
 Сами тесты запускаются следующим образом:
+
 python -m pytest -v --tb=line --language=en -m need_review
 
 *меткой need_review отмечены тесты, обозначенные для проверки.  
